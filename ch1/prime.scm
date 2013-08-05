@@ -13,5 +13,7 @@
   (= (remainder b a) 0))
 
 (define (prime? n)
-  (= n (smallet-divisor n)))
+  (if (< n 2)
+	#f
+	(= n (smallet-divisor n))))
 
