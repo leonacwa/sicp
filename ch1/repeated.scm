@@ -1,12 +1,12 @@
-
-(load "compose.scm")
+; iter
 
 (define (repeated f n)
+  (define (iter i repeated-f)
+	(if (= i 1)
+	  repeated-f
+	  (iter (- i 1)
+			(lambda (x)
+			  (f (repeated-f x))))))
   (if (< n 1) (error "n must be greater than 0\n")
-	(lambda (x)
-	  (define (iter count result)
-		(if (> count n)
-		  result
-		  (iter (+ count 1) (f result))))
-	  (iter 1 x))))
+	(iter n f)))
 
