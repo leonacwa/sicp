@@ -1,7 +1,4 @@
-;test for ex 2.29 mobile
-
-;(load "2_29-mobile.scm")
-(load "2_29-mobile_d.scm")
+(load "2_29-mobile-represent.scm")
 
 (define b1 (make-branch 1 1))
 (define b2 (make-branch 1 1))
@@ -16,17 +13,7 @@
 
 (define M1 (make-mobile B1 B2))
 
-(display "WEIGHT ")
-(display (total-weight M1))
-(newline)
-
 (display (branch-length b1))
 (newline)
 (display (branch-structure b1))
-(newline)
-(display (branch? B1))
-(newline)
-
-(display "BALANCED ")
-(display (balanced-mobile? M1))
 (newline)
